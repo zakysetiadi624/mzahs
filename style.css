@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 40px;
+    overflow: hidden;
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: url("ky.jpeg") center/cover no-repeat;
+
+    filter: blur(8px);
+    transform: scale(1.1);
+
+    z-index: -1;
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(255,255,255,0.6);
+
+    z-index: -1;
+}
+
+/* kiri */
+.nav-left {
+    display: flex;
+    gap: 20px;
+}
+
+/* tengah */
+.nav-logo {
+    text-align: center;
+}
+
+.nav-logo img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* kanan */
+.nav-right {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.navbar {
+    border-bottom: 1px solid #ddd;
+
+}
+
+/* style umum menu */
+.nav-left a,
+.nav-right a {
+    text-decoration: none;
+    color: blue;
+    font-weight: 600;
+}
+
+/* style Home (active) */
+.nav-left a.active {
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+/* style My Profile dibuat sama seperti Home */
+.profile-link {
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+/* LOGO */
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-logo img {
+    width: 80px;
+    height: 80px;        /* wajib sama dengan width */
+    border-radius: 50%;
+    object-fit: cover;   /* supaya gambar tidak gepeng */
+
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    top: 30px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 5px 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* GALLERY */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #354558;
+    padding: 40px;
+}
+
+.gallery img {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* QUOTE */
+.quote {
+    text-align: center;
+    padding: 80px;
+    background: #2bd8bb;
+    color: white;
+}
+
+.quote span {
+    font-weight: 700;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* COLLECTION */
+.collection {
+    background: #27ea6b;
+    color: white;
+    text-align: center;
+    padding: 80px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;     /* jadi ke bawah */
+    align-items: center;        /* tengah horizontal */
+    text-align: center;         /* teks rata tengah */
+    gap: 10px;
+    padding: 30px;
+    background: #eee;
+}
+
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        position: static;
+        transform: none;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.profile {
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #0000ff;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.profile:hover {
+    background: #0000ff;
+    transform: scale(1.05);
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ini bikin tengah */
+}
+
+.caption {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+
+    opacity: 0;
+    transform: translateY(15px);
+    transition: 0.4s ease;
+}
+
+.item:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+.caption {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
